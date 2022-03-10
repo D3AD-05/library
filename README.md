@@ -8,7 +8,7 @@ this is a basic ebook managment project
 
 ## Acknowledgements
 
- - [django}(https://www.djangoproject.com/)
+ - [django](https://www.djangoproject.com/)
  - [correyms](https://coreyms.com/)
  - 
 
