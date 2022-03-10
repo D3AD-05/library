@@ -13,25 +13,25 @@ CATEGORY = (
         ('Thriller','Thriller'),
     )
 STAR = (
-    ("1", "One"),
-    ("2", "Two"),
-    ("3", "Three"),
-    ("4", "Four"),
-    ("5", "Five"),
+    ("1", "1"),
+    ("2", "2"),
+    ("3", "3"),
+    ("4", "4"),
+    ("5", "5"),
 )
 
 
 class BookAddForm(forms.ModelForm):
+    title = forms.CharField(max_length=100)
     author = forms.CharField(max_length=200)
     category = forms.ChoiceField(choices=CATEGORY)
-    title = forms.CharField(max_length=100)
     rating = forms.ChoiceField(choices=STAR)
     favourites = forms.BooleanField()
     image = forms.ImageField()
 
     class Meta:
         model = Books
-        fields = ['author', 'category','title', 'rating','favourites','image']
+        fields = ['title','author', 'category', 'rating','favourites','image']
     # to check exist or not
     def clean(self):
         cleaned_data = super().clean()
