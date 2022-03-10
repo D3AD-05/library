@@ -4,6 +4,7 @@ from django .core import validators
 from django.contrib.auth.forms import UserCreationForm
 
 CATEGORY = (
+        ('_',' -------'),
         ('Fantasy','Fantasy'),
         ('Literary','Literary'),
         ('Mystery','Mystery'),

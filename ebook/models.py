@@ -35,7 +35,7 @@ class Books(models.Model):
     category = models.CharField(max_length=200, choices=CATEGORY, default='')
     author = models.CharField(max_length=100, null=True)
     rating = models.CharField(max_length=200, choices=STAR, default='')
-    favourites = models.BooleanField(default=True)
+    favourites = models.BooleanField(default='')
     image = models.ImageField(upload_to='pic',blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
