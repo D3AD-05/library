@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{% block content %}
+
+<h1>your book details</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">Book Name :
+                    {{book.title}}
+                </div>
+                <img src="{{items.image.url}}" style="width:50%">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">book by :{{book.author}}</li>
+                    <li class="list-group-item">genre{{book.category}}</li>
+                    <li class="list-group-item">{{book.image}}</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+</div>
+{%endblock%}
+</html>
