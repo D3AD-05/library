@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django.core.validators import MaxValueValidator
 
 def validate_rate(value):
-    if value >= 5:
+    if value > 6  :
         raise ValidationError(
             _('%(value)s rating must be less than 5'),
             params={'value': value},
@@ -23,11 +23,18 @@ class Books(models.Model):
         ('Fiction','Fiction'),
         ('Thriller','Thriller'),
     )
+
+    STAR = (
+        ("1", "One"),
+        ("2", "Two"),
+        ("3", "Three"),
+        ("4", "Four"),
+        ("5", "Five"),
+    )
     title = models.CharField(max_length=100, null=True)
-    category = models.CharField(max_length=200, choices=CATEGORY, null=True)
+    category = models.CharField(max_length=200, choices=CATEGORY, default='')
     author = models.CharField(max_length=100, null=True)
-    review = models.IntegerField( null=True)
-    rating = models.IntegerField(validators=[validate_rate])
+    rating = models.CharField(max_length=200, choices=STAR, default='')
     favourites = models.BooleanField(default=True)
     image = models.ImageField(upload_to='pic',blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
