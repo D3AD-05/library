@@ -1,6 +1,7 @@
 
 # ebook-django
-this is a basic ebook managment project
+this is a  ebook managment project done using python 
+and Django framework 
 
 
 
